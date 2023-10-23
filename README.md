@@ -41,24 +41,16 @@ La barra de navegación inferior contiene tres elementos:
 
 - **"Mejor valorados"**: Muestra películas mejor valoradas y tiene un ícono de estrella.
 
-En esta Practica del proyeto Hicimos lo soguiente:
-La función _getMediaList() es responsable de construir y devolver una lista de widgets, específicamente widgets de tipo MediaList, que son componentes de interfaz de usuario utilizados para mostrar listas de películas o programas de televisión. La elección entre películas y programas de televisión se basa en el valor de la variable mediaType.
-
-Si mediaType es igual a MediaType.movie, la función crea tres instancias de MediaList, una para cada categoría de películas: "popular," "upcoming," y "top_rated." Estas instancias se crean utilizando el proveedor de medios de películas (movieProvider) y la categoría correspondiente. Cada MediaList es un widget que mostrará una lista de películas de la categoría seleccionada.
-
-Si mediaType no es igual a MediaType.movie, la función crea tres instancias de MediaList, una para cada categoría de programas de televisión: "popular," "on_the_air," y "top_rated." Estas instancias se crean utilizando el proveedor de medios de programas de televisión (showProvider) y la categoría correspondiente. Cada MediaList es un widget que mostrará una lista de programas de televisión de la categoría seleccionada.
-
-Esta función permite que la aplicación "MovieApp-200931" sea versátil y se adapte a las preferencias del usuario al mostrar diferentes categorías de contenido. Los usuarios pueden cambiar entre películas y programas de televisión, y la función _getMediaList() garantiza que se muestre la información correcta en la página de inicio.
+En esta Practica del proyeto se contruyo:
+El widget `MediaDetail` es un widget Flutter que muestra información detallada sobre un elemento multimedia, incluyendo su título, póster, calificación y descripción general. Crea una interfaz de usuario visualmente atractiva combinando un fondo de imagen con un efecto de desenfoque y superponiendo los detalles del elemento multimedia.
 
 ## Capturas de Pantalla
 <p align="center">
   <img src="./assets/a1.jpeg" width="200" alt="Captura de Pantalla 1.1">
   <img src="./assets/a2.jpeg" width="200" alt="Captura de Pantalla 1.2">
-  <img src="./assets/a.jpg" width="200" alt="Captura de Pantalla 1">
   <img src="./assets/b.jpg" width="200" alt="Captura de Pantalla 2">
   <img src="./assets/c.jpg" width="200" alt="Captura de Pantalla 3">
   <img src="./assets/d.jpg" width="200" alt="Captura de Pantalla 4">
-  <img src="./assets/e.jpg" width="200" alt="Captura de Pantalla 5">
   <img src="./assets/f.jpg" width="200" alt="Captura de Pantalla 6">
   <img src="./assets/g.jpg" width="200" alt="Captura de Pantalla 7">
 </p>
