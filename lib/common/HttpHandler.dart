@@ -98,5 +98,4 @@ Future<List<Media>> fetchMovies({String category = "populares"}) async {
         .map<Media>((item) => new Cast(item, MediaType.show))
         .toList()));
   }
-   
 }
