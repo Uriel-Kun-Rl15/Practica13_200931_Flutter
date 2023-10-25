@@ -7,6 +7,7 @@ import 'dart:convert'; // Importa la biblioteca para codificar y decodificar JSO
 import 'package:http/http.dart'
     as http; // Importa la biblioteca para realizar solicitudes HTTP.
 import 'package:movieapp_20091/common/Constants.dart'; // Importa un archivo Constants.dart.
+import 'package:movieapp_20091/model/Cast.dart';
 import 'package:movieapp_20091/model/Media.dart'; // Importa la definición de la clase Media.
 
 class HttpHandler {
@@ -37,7 +38,6 @@ Future<List<Media>> fetchMovies({String category = "populares"}) async {
       'language': _language,
     },
   );
-
 
 
   return getJson(uri).then((data) {
@@ -74,4 +74,29 @@ Future<List<Media>> fetchMovies({String category = "populares"}) async {
         .map<Media>((item) => new Media(item, MediaType.show))
         .toList()));
   }
+
+  Future<List<Media>> fetchCreditMovies(int mediaId) async {
+    var uri = new Uri.https(_baseUrl, "3/movie/$mediaId/credits", {
+      'api_key': API_KEY,
+      'page': "1",
+      'language': _language
+    }); // Parámetros de la solicitud.
+    // Llama a la función getJson para obtener datos y mapearlos en objetos de tipo Media.
+    return getJson(uri).then(((data) => data['cast']
+        .map<Media>((item) => new Cast(item, MediaType.movie))
+        .toList()));
+  }
+
+  Future<List<Media>> fetchCreditShows(int mediaId) async {
+    var uri = new Uri.https(_baseUrl, "3/tv/$mediaId/credits", {
+      'api_key': API_KEY,
+      'page': "1",
+      'language': _language
+    }); // Parámetros de la solicitud.
+    // Llama a la función getJson para obtener datos y mapearlos en objetos de tipo Media.
+    return getJson(uri).then(((data) => data['cast']
+        .map<Media>((item) => new Cast(item, MediaType.show))
+        .toList()));
+  }
+   
 }
