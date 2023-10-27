@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:movieapp_20091/model/Media.dart'; //
+import 'package:flutter/painting.dart';
+import 'package:movieapp_20091/common/MediaProvider.dart';
+import 'package:movieapp_20091/model/Media.dart'; 
+import 'package:movieapp_20091/cast_scroller.dart'; 
 import 'dart:ui' as ui;
 
 class MediaDetail extends StatelessWidget {
   final Media media;
-  MediaDetail(this.media);
+  final MediaProvider provider;
+
+  MediaDetail(this.media, this.provider);
 
   @override
   Widget build(BuildContext context) {

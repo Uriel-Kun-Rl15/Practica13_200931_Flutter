@@ -16,8 +16,7 @@ class MediaPrvider extends MediaProvider {
   
   @override
   Future<List<Media>> fetchCast(int mediaId) {
-    // TODO: implement fetchCast
-    throw UnimplementedError();
+    return _client.fetchCreditMovies(mediaId);
   }
 }
 
@@ -30,7 +29,6 @@ class ShowProvider extends MediaProvider {
   
   @override
   Future<List<Media>> fetchCast(int mediaId) {
-    // TODO: implement fetchCast
-    throw UnimplementedError();
-  }
+    return _client.fetchCreditShows(mediaId);
+    }
 }
