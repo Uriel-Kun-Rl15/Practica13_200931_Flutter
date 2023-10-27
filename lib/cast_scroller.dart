@@ -32,10 +32,11 @@ class _CastControllerState extends State<CastController>{
     return Padding(padding: const EdgeInsets.only(right: 16.0),
     child: Column(children: <Widget>[
       CircleAvatar(backgroundImage:  new NetworkImage(
-        cast.url.
+        cast.url
       ))
-    ]),)
+    ]));
   }
+
   @override               
   Widget build (BuildContext context){
     return new Column(
