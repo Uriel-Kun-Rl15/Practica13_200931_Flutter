@@ -18,7 +18,7 @@ class Cast{
 
   Cast.deserialize(Map jsonMap, MediaType mediaType) :
   id =jsonMap["cast_id"].toInt(),
-  name = jsonMap["cast_id"],
+  name = jsonMap["name"],
   profilePath = jsonMap["profile_path"] ?? 'poster.jpg';
 
   
