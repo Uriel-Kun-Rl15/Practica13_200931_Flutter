@@ -87,7 +87,8 @@ class MediaDetail extends StatelessWidget {
                             fontFamily: 'MiFuente'),
                       )
                     ],
-                  )
+                  ),
+                  CastController(provider, media.id)
                 ],
               ),
             ),
