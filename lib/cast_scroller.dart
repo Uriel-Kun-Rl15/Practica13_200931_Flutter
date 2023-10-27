@@ -12,6 +12,12 @@ class CastController extends StatefulWidget{
 }
 
 class _CastControllerState extends State<CastController>{
+  @override
+  void initState(){
+    super.initState();
+    loadCast();
+  }
+
   final List<Cast> _casts = [];
   void loadCast() async{
     var results = await widget.provider.fetchCast(widget.mediaId);
