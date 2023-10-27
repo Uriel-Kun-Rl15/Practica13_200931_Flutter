@@ -4,6 +4,7 @@ import 'dart:async';
 
 abstract class MediaProvider {
   Future<List<Media>> fetchMedia(String category);
+  Future<List<Media>> fetchCast(int mediaId);
 }
 
 class MediaPrvider extends MediaProvider {
@@ -12,6 +13,12 @@ class MediaPrvider extends MediaProvider {
   Future<List<Media>> fetchMedia(String category) {
     return _client.fetchMovies(category: category);
   }
+  
+  @override
+  Future<List<Media>> fetchCast(int mediaId) {
+    // TODO: implement fetchCast
+    throw UnimplementedError();
+  }
 }
 
 class ShowProvider extends MediaProvider {
@@ -19,5 +26,11 @@ class ShowProvider extends MediaProvider {
   @override
   Future<List<Media>> fetchMedia(String category) {
     return _client.fetchShow(category: category);
+  }
+  
+  @override
+  Future<List<Media>> fetchCast(int mediaId) {
+    // TODO: implement fetchCast
+    throw UnimplementedError();
   }
 }
